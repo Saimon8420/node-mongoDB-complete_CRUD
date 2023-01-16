@@ -54,9 +54,9 @@ const deleteUser = async (req, res) => {
     console.log(query);
     const result = await userCollection.deleteOne(query);
     if (result.deletedCount === 1) {
-        res.send("Successfully deleted one document.");
+        res.send(result);
     } else {
-        res.send("No documents matched the query. Deleted 0 documents.");
+        res.send(`No documents matched the query. Deleted 0 documents`);
     }
 }
 
